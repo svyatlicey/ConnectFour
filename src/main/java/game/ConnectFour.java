@@ -55,4 +55,8 @@ public class ConnectFour {
         return currentPlayer;
     }
 
+    public boolean checkWin(int player){
+        //todo Реализовать логику проверки выигрыша игрока
+        return true;
+    }
 }
