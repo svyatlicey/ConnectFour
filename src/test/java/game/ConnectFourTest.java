@@ -2,8 +2,7 @@ package game;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ConnectFourTest {
     @Test
@@ -59,6 +58,15 @@ public class ConnectFourTest {
         ConnectFour game = new ConnectFour();
         game.drop(0);
         assertEquals(2,game.getCurrentPlayer());
+    }
+
+    @Test
+    void dropInFullColumnThrowsExceptionTest(){
+        ConnectFour game = new ConnectFour();
+        for (int i = 0; i < game.getRows(); i++) {
+            game.drop(0);
+        }
+        assertThrows(IllegalStateException.class, ()->game.drop(0));
     }
 
 
