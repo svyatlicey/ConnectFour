@@ -119,9 +119,27 @@ public class ConnectFourTest {
         game.drop(2);//1
         game.drop(3);
         game.drop(3);
-        game.drop(4);
+        game.drop(5);
         game.drop(3);
         assertTrue(game.checkWin(1));
+    }
+
+    @Test
+    void checkWinReturnsTrueForDiagnoalDownRight(){
+        ConnectFour game = new ConnectFour();
+        game.drop(3);
+        game.drop(2);
+        game.drop(2);
+        game.drop(1);
+        game.drop(1);
+        game.drop(0);
+        game.drop(1);
+        game.drop(0);
+        game.drop(0);
+        game.drop(4);
+        game.drop(0);
+        assertTrue(game.checkWin(1));
+
     }
 
 
