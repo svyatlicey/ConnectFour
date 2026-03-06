@@ -29,9 +29,21 @@ public class ConnectFour {
         return board[row][col];
     }
 
-    public void drop(int col){
-        // todo реализовать логику с броском в определенный столбец.
-        board[5][0] = 1;
+    /**
+     * Бросает фишку текущего игрока в указанный столбец
+     * Фишка падает в самую нижнюю пустую ячейку столбца
+     * @param col индекс колонки
+     * @throws IllegalStateException если колонка заполнена
+     * */
+    public void drop(int col) {
+        for (int row = getRows()-1; row >= 0; row--) {
+            if (board[row][col] == 0) {
+                // todo реализовать логику смены игрока после броска, пока всегда игрок 1
+                board[row][col] = 1;
+                return;
+            }
+        }
+        throw new IllegalStateException("Column is full");
     }
 
 
