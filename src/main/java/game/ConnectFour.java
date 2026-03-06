@@ -40,16 +40,18 @@ public class ConnectFour {
     public void drop(int col) {
         for (int row = getRows()-1; row >= 0; row--) {
             if (board[row][col] == 0) {
-                // todo реализовать логику смены игрока после броска, пока всегда игрок 1
-                board[row][col] = 1;
+                board[row][col] = currentPlayer;
+                currentPlayer = (currentPlayer == 1) ? 2 : 1;
                 return;
             }
         }
         throw new IllegalStateException("Column is full");
     }
 
+    /**
+     * Возвращает текущего игрока (1 или 2)
+     * */
     public int getCurrentPlayer(){
-        //todo реализовать логику смены игроков
         return currentPlayer;
     }
 
