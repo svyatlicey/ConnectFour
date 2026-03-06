@@ -56,7 +56,18 @@ public class ConnectFour {
     }
 
     public boolean checkWin(int player){
-        //todo Реализовать логику проверки выигрыша игрока
-        return true;
+        //todo Реализовать логику проверки выигрыша игрока по горизонтали и диагоналям
+        // вертикали
+        for (int row = 0; row <= getRows() - 4; row++) {
+            for (int col = 0; col < getColumns(); col++) {
+                if (board[row][col] == player &&
+                        board[row+1][col] == player &&
+                        board[row+2][col] == player &&
+                        board[row+3][col] == player) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
