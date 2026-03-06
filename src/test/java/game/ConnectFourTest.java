@@ -48,5 +48,11 @@ public class ConnectFourTest {
         assertEquals(1,game.getCell(5,3));
     }
 
+    @Test
+    void currentPlayerStatsWithOneTest(){
+        ConnectFour game = new ConnectFour();
+        assertEquals(1,game.getCurrentPlayer());
+    }
+
 
 }
