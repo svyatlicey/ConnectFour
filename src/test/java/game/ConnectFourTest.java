@@ -82,5 +82,17 @@ public class ConnectFourTest {
         assertTrue(game.checkWin(1));
     }
 
+    @Test
+    void checkWinReturnsFalseWhenNoWin(){
+        ConnectFour game = new ConnectFour();
+        game.drop(0);
+        game.drop(1);
+        game.drop(0);
+        game.drop(2);
+        game.drop(0);
+        game.drop(1);
+        assertFalse(game.checkWin(1));
+    }
+
 
 }
