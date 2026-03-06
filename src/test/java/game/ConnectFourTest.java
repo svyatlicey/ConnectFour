@@ -142,5 +142,11 @@ public class ConnectFourTest {
 
     }
 
+    @Test
+    void isDrawReturnsFalseWhenGameNotOver(){
+        ConnectFour game = new ConnectFour();
+        assertFalse(game.isDraw());
+    }
+
 
 }
