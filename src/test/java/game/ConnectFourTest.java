@@ -69,5 +69,18 @@ public class ConnectFourTest {
         assertThrows(IllegalStateException.class, ()->game.drop(0));
     }
 
+    @Test
+    void checkWinReturnsTrueForHorizontalLine(){
+        ConnectFour game = new ConnectFour();
+        for (int i = 0; i < 7; i++) {
+            if(game.getCurrentPlayer() == 1){
+                game.drop(0);
+            }else{
+                game.drop(1);
+            }
+        }
+        assertTrue(game.checkWin(1));
+    }
+
 
 }
