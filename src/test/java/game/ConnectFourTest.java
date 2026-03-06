@@ -19,10 +19,15 @@ public class ConnectFourTest {
     }
 
     @Test
-
     void defaultColumnsTest(){
         ConnectFour game = new ConnectFour();
         assertEquals(7,game.getColumns());
+    }
+
+    @Test
+    void initialCellIsZeroTest(){
+        ConnectFour game = new ConnectFour();
+        assertEquals(0,game.getCell(0,0));
     }
 
 }
