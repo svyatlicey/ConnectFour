@@ -54,5 +54,12 @@ public class ConnectFourTest {
         assertEquals(1,game.getCurrentPlayer());
     }
 
+    @Test
+    void currentPlayerSwithcesAfterDropTest(){
+        ConnectFour game = new ConnectFour();
+        game.drop(0);
+        assertEquals(2,game.getCurrentPlayer());
+    }
+
 
 }
