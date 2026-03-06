@@ -6,4 +6,8 @@ public class ConnectFour {
         //todo Реализовать логику возвращения количества строк на поле
         return 6;
     }
+    public int getColumns(){
+        //todo Реализовать логику возвращение количества столбцов на поле
+        return 7;
+    }
 }
