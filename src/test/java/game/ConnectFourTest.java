@@ -148,5 +148,53 @@ public class ConnectFourTest {
         assertFalse(game.isDraw());
     }
 
+    @Test
+    void isDrawReturnsTrueWhenBoardFullAndNoWinner(){
+        ConnectFour game = new ConnectFour();
+        game.drop(0);
+        game.drop(1);
+        game.drop(0);
+        game.drop(1);
+        game.drop(2);
+        game.drop(3);
+        game.drop(2);
+        game.drop(3);
+        game.drop(4);
+        game.drop(5);
+        game.drop(4);
+        game.drop(5);
+        game.drop(6);
+        game.drop(0);
+        game.drop(6);
+        game.drop(0);
+        game.drop(1);
+        game.drop(2);
+        game.drop(1);
+        game.drop(2);
+        game.drop(3);
+        game.drop(4);
+        game.drop(3);
+        game.drop(4);
+        game.drop(5);
+        game.drop(6);
+        game.drop(5);
+        game.drop(6);
+        game.drop(0);
+        game.drop(1);
+        game.drop(0);
+        game.drop(1);
+        game.drop(2);
+        game.drop(3);
+        game.drop(2);
+        game.drop(3);
+        game.drop(4);
+        game.drop(5);
+        game.drop(4);
+        game.drop(5);
+        game.drop(6);
+        game.drop(6);
+        assertTrue(game.isDraw());
+    }
+
 
 }
