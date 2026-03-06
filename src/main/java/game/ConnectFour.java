@@ -109,8 +109,16 @@ public class ConnectFour {
         return false;
     }
 
-    public boolean isDraw(){
-        //todo реализовать логику проверки ничьей
-        return false;
+    /**
+     * Проверяет что игра закончилась вничью (поле полно, победителя нет).
+     * @return true если ничья, false в противном случае
+     */
+    public boolean isDraw() {
+        for (int r = 0; r < getRows(); r++) {
+            for (int c = 0; c < getColumns(); c++) {
+                if (board[r][c] == 0) return false;
+            }
+        }
+        return !checkWin(1) && !checkWin(2);
     }
 }
