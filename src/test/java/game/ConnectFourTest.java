@@ -94,5 +94,18 @@ public class ConnectFourTest {
         assertFalse(game.checkWin(1));
     }
 
+    @Test
+    void checkWinRetrunsTrueForHorizontalLine(){
+        ConnectFour game = new ConnectFour();
+        game.drop(0);
+        game.drop(0);
+        game.drop(1);
+        game.drop(1);
+        game.drop(2);
+        game.drop(2);
+        game.drop(3);
+        assertTrue(game.checkWin(1));
+    }
+
 
 }
