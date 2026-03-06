@@ -27,7 +27,12 @@ public class ConnectFourTest {
     @Test
     void initialCellIsZeroTest(){
         ConnectFour game = new ConnectFour();
-        assertEquals(0,game.getCell(0,0));
+        for (int i = 0; i < game.getRows(); i++) {
+            for (int j = 0; j < game.getColumns(); j++) {
+                assertEquals(0,game.getCell(i, j));
+            }
+        }
     }
+
 
 }
