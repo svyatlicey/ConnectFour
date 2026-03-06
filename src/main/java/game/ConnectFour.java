@@ -108,4 +108,9 @@ public class ConnectFour {
 
         return false;
     }
+
+    public boolean isDraw(){
+        //todo реализовать логику проверки ничьей
+        return false;
+    }
 }
