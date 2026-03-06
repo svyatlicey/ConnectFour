@@ -45,7 +45,7 @@ public class ConnectFourTest {
     void dropPlacesDiscInCorrectColumnTest(){
         ConnectFour game = new ConnectFour();
         game.drop(3);
-        assertEquals(1,game.getCell(5,0));
+        assertEquals(1,game.getCell(5,3));
     }
 
 
