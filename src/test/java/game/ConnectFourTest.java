@@ -34,5 +34,12 @@ public class ConnectFourTest {
         }
     }
 
+    @Test
+    void dropPlacesDiscAtBottomTest(){
+        ConnectFour game = new ConnectFour();
+        game.drop(0);
+        assertEquals(1,game.getCell(5,0));
+    }
+
 
 }
