@@ -18,4 +18,11 @@ public class ConnectFourTest {
         assertEquals(6,game.getRows());
     }
 
+    @Test
+
+    void defaultColumnsTest(){
+        ConnectFour game = new ConnectFour();
+        assertEquals(7,game.getColumns());
+    }
+
 }
