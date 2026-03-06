@@ -3,6 +3,8 @@ package game;
 public class ConnectFour {
 
     private int[][] board;
+    private int currentPlayer = 1;
+
 
     public ConnectFour(){
         board = new int[getRows()][getColumns()];
@@ -46,5 +48,9 @@ public class ConnectFour {
         throw new IllegalStateException("Column is full");
     }
 
+    public int getCurrentPlayer(){
+        //todo реализовать логику смены игроков
+        return currentPlayer;
+    }
 
 }
