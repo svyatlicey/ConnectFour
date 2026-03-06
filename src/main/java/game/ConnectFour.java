@@ -55,9 +55,12 @@ public class ConnectFour {
         return currentPlayer;
     }
 
+    /**
+     * Проверяет, что указанный игрок выиграл.
+     * @param player номер игрока (1 или 2)
+     * @return true если у игрока есть 4 соединенных фишки
+     */
     public boolean checkWin(int player){
-        //todo Реализовать логику проверки выигрыша игрока по диагоналям
-
         // вертикали
         for (int row = 0; row <= getRows() - 4; row++) {
             for (int col = 0; col < getColumns(); col++) {
@@ -80,6 +83,29 @@ public class ConnectFour {
                 }
             }
         }
+        // диагонали вверх-вправо
+        for (int row = 0; row <= getRows() - 4; row++) {
+            for (int col = 0; col <= getColumns() - 4; col++) {
+                if (board[row][col] == player &&
+                        board[row+1][col+1] == player &&
+                        board[row+2][col+2] == player &&
+                        board[row+3][col+3] == player) {
+                    return true;
+                }
+            }
+        }
+        // диагонали вниз-вправо
+        for (int row = 3; row < getRows(); row++) {
+            for (int col = 0; col <= getColumns() - 4; col++) {
+                if (board[row][col] == player &&
+                        board[row-1][col+1] == player &&
+                        board[row-2][col+2] == player &&
+                        board[row-3][col+3] == player) {
+                    return true;
+                }
+            }
+        }
+
         return false;
     }
 }
