@@ -70,7 +70,7 @@ public class ConnectFourTest {
     }
 
     @Test
-    void checkWinReturnsTrueForHorizontalLine(){
+    void checkWinReturnsTrueForVerticalLine(){
         ConnectFour game = new ConnectFour();
         for (int i = 0; i < 7; i++) {
             if(game.getCurrentPlayer() == 1){
