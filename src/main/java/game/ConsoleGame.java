@@ -34,8 +34,19 @@ public class ConsoleGame {
     }
 
     public int promptColumn() {
-        //todo реализовать ограничение на ввод
-        out.print("Ход игрока " + game.getCurrentPlayer() + ". Введите номер столбца (0-6): ");
-        return scanner.nextInt();
+        while (true) {
+            out.print("Ход игрока " + game.getCurrentPlayer() + ". Введите номер столбца (0-6): ");
+            if (scanner.hasNextInt()) {
+                int col = scanner.nextInt();
+                if (col >= 0 && col < game.getColumns()) {
+                    return col;
+                } else {
+                    out.println("Ошибка: столбец вне диапазона.");
+                }
+            } else {
+                out.println("Ошибка: введите число.");
+                scanner.next(); // пропустить некорректный ввод
+            }
+        }
     }
 }
