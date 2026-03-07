@@ -107,4 +107,17 @@ public class ConsoleGameTest {
         assertTrue(output.toString().contains("Ошибка: столбец вне диапазона."));
     }
 
+    @Test
+    void promptColumnReturnsMinusTwoForQ() {
+        String input = "q\n";
+        ByteArrayInputStream testIn = new ByteArrayInputStream(input.getBytes());
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        PrintStream testOut = new PrintStream(output);
+        ConnectFour game = new ConnectFour();
+        ConsoleGame consoleGame = new ConsoleGame(testIn, testOut, game);
+
+        int result = consoleGame.promptColumn();
+
+        assertEquals(-2, result);
+    }
 }
