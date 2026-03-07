@@ -37,4 +37,28 @@ public class ConsoleGameTest {
         assertEquals(expected, output.toString());
     }
 
+    @Test
+    void printBoardPrintsBoardWithDiscs() {
+        ConnectFour game = new ConnectFour();
+        game.drop(0);
+        game.drop(1);
+        game.drop(0);
+
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        PrintStream testOut = new PrintStream(output);
+        ConsoleGame consoleGame = new ConsoleGame(System.in, testOut, game);
+
+        consoleGame.printBoard();
+
+        String ls = System.lineSeparator();
+        String expected = ls + "  Доска:" + ls +
+                ". . . . . . . " + ls +
+                ". . . . . . . " + ls +
+                ". . . . . . . " + ls +
+                ". . . . . . . " + ls +
+                "X . . . . . . " + ls +
+                "X O . . . . . " + ls +
+                "0 1 2 3 4 5 6" + ls;
+        assertEquals(expected, output.toString());
+    }
 }
