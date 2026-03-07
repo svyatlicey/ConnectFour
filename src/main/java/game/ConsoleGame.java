@@ -52,4 +52,32 @@ public class ConsoleGame {
             }
         }
     }
+
+    public void play() {
+        while (true) {
+            printBoard();
+            int col = promptColumn();
+            if (col == -2) {
+                out.println("Выход из игры.");
+                break;
+            }
+            game.drop(col);
+            if (game.checkWin(1)) {
+                printBoard();
+                out.println("Игрок 1 победил!");
+                break;
+            }
+            if (game.checkWin(2)) {
+                printBoard();
+                out.println("Игрок 2 победил!");
+                break;
+            }
+            if (game.isDraw()) {
+                printBoard();
+                out.println("Ничья!");
+                break;
+            }
+        }
+    }
+
 }
