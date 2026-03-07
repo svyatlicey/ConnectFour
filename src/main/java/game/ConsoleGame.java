@@ -14,4 +14,14 @@ public class ConsoleGame {
         this.out = out;
         this.game = game;
     }
+
+    public void printBoard() {
+        //todo реализовать вывод текущего состояния доски
+        out.println();
+        out.println("  Доска:");
+        for (int i = 0; i < 6; i++) {
+            out.println(". . . . . . . ");
+        }
+        out.println("0 1 2 3 4 5 6");
+    }
 }
