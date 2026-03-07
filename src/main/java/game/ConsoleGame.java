@@ -32,4 +32,10 @@ public class ConsoleGame {
         }
         out.println("0 1 2 3 4 5 6");
     }
+
+    public int promptColumn() {
+        //todo реализовать ограничение на ввод
+        out.print("Ход игрока " + game.getCurrentPlayer() + ". Введите номер столбца (0-6): ");
+        return scanner.nextInt();
+    }
 }
