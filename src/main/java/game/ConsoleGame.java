@@ -15,12 +15,20 @@ public class ConsoleGame {
         this.game = game;
     }
 
+    /**
+     * Выводит текущее состояние доски в выходной поток.
+     * Пустые клетки показываются как '.', фишки первого игрока как 'X', фишки второго как 'O'.
+     */
     public void printBoard() {
-        //todo реализовать вывод текущего состояния доски
         out.println();
         out.println("  Доска:");
-        for (int i = 0; i < 6; i++) {
-            out.println(". . . . . . . ");
+        for (int r = 0; r < game.getRows(); r++) {
+            for (int c = 0; c < game.getColumns(); c++) {
+                int cell = game.getCell(r, c);
+                char symbol = cell == 0 ? '.' : (cell == 1 ? 'X' : 'O');
+                out.print(symbol + " ");
+            }
+            out.println();
         }
         out.println("0 1 2 3 4 5 6");
     }
