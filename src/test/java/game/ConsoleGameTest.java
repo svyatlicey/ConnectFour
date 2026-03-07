@@ -2,6 +2,7 @@ package game;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
@@ -60,5 +61,19 @@ public class ConsoleGameTest {
                 "X O . . . . . " + ls +
                 "0 1 2 3 4 5 6" + ls;
         assertEquals(expected, output.toString());
+    }
+
+    @Test
+    void promptColumnReturnsIntegerForValidInput() {
+        String input = "3\n";
+        ByteArrayInputStream testIn = new ByteArrayInputStream(input.getBytes());
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        PrintStream testOut = new PrintStream(output);
+        ConnectFour game = new ConnectFour();
+        ConsoleGame consoleGame = new ConsoleGame(testIn, testOut, game);
+
+        int column = consoleGame.promptColumn();
+
+        assertEquals(3, column);
     }
 }
