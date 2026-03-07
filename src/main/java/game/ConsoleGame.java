@@ -44,8 +44,11 @@ public class ConsoleGame {
                     out.println("Ошибка: столбец вне диапазона.");
                 }
             } else {
+                String input = scanner.next();
+                if (input.equalsIgnoreCase("q")) {
+                    return -2;
+                }
                 out.println("Ошибка: введите число.");
-                scanner.next(); // пропустить некорректный ввод
             }
         }
     }
