@@ -135,4 +135,18 @@ public class ConsoleGameTest {
         String outputStr = output.toString();
         assertTrue(outputStr.contains("Игрок 1 победил!"));
     }
+
+    @Test
+    void playExitsOnQuit() {
+        String input = "q\n";
+        ByteArrayInputStream testIn = new ByteArrayInputStream(input.getBytes());
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        PrintStream testOut = new PrintStream(output);
+        ConnectFour game = new ConnectFour();
+        ConsoleGame consoleGame = new ConsoleGame(testIn, testOut, game);
+
+        consoleGame.play();
+
+        assertTrue(output.toString().contains("Выход из игры."));
+    }
 }
